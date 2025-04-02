@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-Edger - Modern Link Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #1565C0;
+            --accent-color: #64B5F6;
+            --text-color: #333;
+            --light-text: #757575;
+            --background: #f9f9f9;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: var(--background);
+            border-radius: 50% 50% 0 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            margin: 10px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background-color: var(--primary-color);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .screenshots {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .screenshot {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.05);
+        }
+
+        .download-section {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .download-section h2 {
+            color: white;
+        }
+
+        .installation-steps {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin: 30px auto;
+            max-width: 800px;
+        }
+
+        .installation-steps ol {
+            margin-left: 20px;
+        }
+
+        .installation-steps li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: #f1f1f1;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+
+        .github-link {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshots img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>L-Edger</h1>
+            <p class="tagline">Modern Link Management for Everyone</p>
+            <a href="https://github.com/dwukn/l-edger/releases/" class="btn">Download APK</a>
+            <a href="#features" class="btn">Learn More</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>What is L-Edger?</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+                L-Edger is a powerful Flutter-based link management application that helps you organize and access your important links effortlessly. Create folders, search by keywords, and copy links to your clipboard with just a double tap.
+            </p>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3 class="feature-title">Folder Organization</h3>
+                    <p>Group your links into intuitive folders based on topics, projects, or any category you prefer.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">Powerful Search</h3>
+                    <p>Find any link instantly by searching through titles, URLs, descriptions, or custom tags.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3 class="feature-title">Quick Copy</h3>
+                    <p>Copy any link to your clipboard with a simple double tap for immediate use.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Modern UI</h3>
+                    <p>Enjoy a clean, intuitive interface designed for both phones and tablets.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✏️</div>
+                    <h3 class="feature-title">Easy Editing</h3>
+                    <p>Add, edit, or delete links and folders with just a few taps.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Offline Access</h3>
+                    <p>Access all your saved links anytime, even without an internet connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="screenshots">
+        <div class="container">
+            <h2>Screenshots</h2>
+            <div class="screenshots">
+                <img src="https://via.placeholder.com/300x600.png" alt="Home Screen" class="screenshot">
+                <img src="https://via.placeholder.com/300x600.png" alt="Link List View" class="screenshot">
+                <img src="https://via.placeholder.com/300x600.png" alt="Add Link Form" class="screenshot">
+            </div>
+        </div>
+    </section> -->
+
+    <section class="download-section">
+        <div class="container">
+            <h2>Download Now</h2>
+            <p>Try L-Edger today and experience better link management</p>
+            <a href="https://github.com/dwukn/l-edger/releases/latest/download/l-edger.apk" class="btn">Download APK</a>
+            <a href="https://github.com/dwukn/l-edger/releases" class="btn">View All Releases</a>
+        </div>
+    </section>
+
+    <section id="installation">
+        <div class="container">
+            <h2>Installation Guide</h2>
+            <div class="installation-steps">
+                <h3>For Users:</h3>
+                <ol>
+                    <li>Download the APK using the button above</li>
+                    <li>Open the APK on your Android device</li>
+                    <li>Allow installation from unknown sources if prompted</li>
+                    <li>Follow the on-screen instructions to complete installation</li>
+                </ol>
+
+                <h3 style="margin-top: 30px;">For Developers:</h3>
+                <ol>
+                    <li>Clone the repository: <code>git clone https://github.com/dwukn/l-edger.git</code></li>
+                    <li>Navigate to the project directory: <code>cd l-edger</code></li>
+                    <li>Install dependencies: <code>flutter pub get</code></li>
+                    <li>Run the app: <code>flutter run</code></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 L-Edger. All rights reserved.</p>
+            <p><a href="https://github.com/dwukn/l-edger" class="github-link">View on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
